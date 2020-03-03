@@ -1,1 +1,28 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Boekhappen</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Boekhappen</h1>
+      <div class="books-overview">
+        <div>rope</div>
+      </div>
+    </main>
 
+    <script type="text/template" id="booksTemplate">
+      {{#Books}}
+        <article class="books-overview__card">
+          <img class="books-overview__card__image" src="{{coverimages.0}}" alt="{{frabl.key1}}" onerror="this.src='{{coverimages.1}}'">
+        </article>
+      {{/Books}}
+    </script>
+
+    <script src="./static/js/vendor/routie.min.js"></script>
+    <script type="module" src="static/js/app.js"></script>
+  </body>
+</html>
