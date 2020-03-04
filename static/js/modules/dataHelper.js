@@ -6,16 +6,16 @@ export default function cleanData(data) {
     return createRenderableObject(randomizedBooks)
 }
 
+export function createRenderableObject(data) {
+    return { Books: data }
+}
+
 function getBooksPerCategory(data) {
     return data.map(category => category.results)
 }
 
 function mergeCategories(categories) {
     return [].concat(...categories)
-}
-
-function createRenderableObject(data) {
-    return { Books: data }
 }
 
 function shuffleList(booksList) {

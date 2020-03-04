@@ -1,5 +1,5 @@
 import { FetchData } from './api.js';
-import { renderTemplate } from './render.js'
+import { startRender } from './render.js'
 import dataHelper from './dataHelper.js'
 import * as store from './store.js'
 
@@ -8,7 +8,7 @@ function handleRoutes() {
         '': () => {
             if (store.dataInStorage()) {
                 const data = JSON.parse(store.getLocalStorageItems())
-                renderTemplate(data)
+                startRender(data)
             } else {
                 const queries = ['Voetbal', 'Tennis', 'Korfbal', 'Aarde', 'Planeet', 'Dieren', 'Dinosaurus', 'Anne Frank']
 
@@ -16,7 +16,7 @@ function handleRoutes() {
                 Promise.all(books)
                     .then(data => dataHelper(data))
                     .then(data => store.storeData(data))
-                    .then(data => renderTemplate(JSON.parse(data)))
+                    .then(data => startRender(JSON.parse(data)))
             }
         }
     });
