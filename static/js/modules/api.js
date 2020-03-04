@@ -9,19 +9,20 @@ const checkStatus = response => {
     }
 }
 
-async function FetchData() {
+async function FetchData(query) {
     const cors = 'https://cors-anywhere.herokuapp.com/';
     const endpoint = 'https://zoeken.oba.nl/api/v1/search/?q=';
-    const query = 'planeet';
-    const key = 'cdb8415c172ec6178b63451e222891a6';
-    const secret = '31978bcbb4e5eb7239f01c180e2f07b1';
+    const key = '76f45dfa187d66be5fd6af05573eab04';
+    const secret = '2cb15758acac08d6ebe6f5ac7a293d69';
     const detail = 'Default';
     const mediaCarrier = 'jeugd';
     const url = `${cors}${endpoint}${query}&authorization=${key}&detaillevel=${detail}&output=json&p=${mediaCarrier}`;
 
     const config = {
-    Authorization: `Bearer ${secret}`
+        Authorization: `Bearer ${secret}`
     };
+
+    console.log('fetch data...')
 
     return fetch(url, config)
         .then(checkStatus)

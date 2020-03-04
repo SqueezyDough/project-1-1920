@@ -8,16 +8,20 @@
   </head>
   <body>
     <main>
-      <h1>Boekhappen</h1>
-      <div class="books-overview">
-        <div>rope</div>
-      </div>
+      <header class="header">
+        <img class="header__logo" src="./static/images/oba-jnr.png" alt="oba junior">
+        <h1 class="header__title">Boekhappen</h1>
+      </header>
+
+      <section class="books-overview"></section>
     </main>
 
     <script type="text/template" id="booksTemplate">
       {{#Books}}
         <article class="books-overview__card">
-          <img class="books-overview__card__image" src="{{coverimages.0}}" alt="{{frabl.key1}}" onerror="this.src='{{coverimages.1}}'">
+          <img class="books-overview__card__image" src="{{coverimages.1}}" alt="{{frabl.key1}}" onerror="this.src='{{coverimages.0}}'">
+            {{#summaries.0}} <p> {{summaries.0}} </p> {{/summaries.0}}
+            {{^summaries.0}} <p> Geen samenvatting </p> {{/summaries.0}}
         </article>
       {{/Books}}
     </script>

@@ -1,15 +1,27 @@
 export default function cleanData(data) {
-    const books = getBooks(data)
+    const booksPerCategory = getBooksPerCategory(data)
+    const allBooks = mergeCategories(booksPerCategory)
+    const randomizedBooks = shuffleList(allBooks);
 
-    console.log(books)
-
-    return createRenderableObject(books)
+    return createRenderableObject(randomizedBooks)
 }
 
-function getBooks(data) {
-    return data.results
+function getBooksPerCategory(data) {
+    return data.map(category => category.results)
+}
+
+function mergeCategories(categories) {
+    return [].concat(...categories)
 }
 
 function createRenderableObject(data) {
     return { Books: data }
+}
+
+function shuffleList(booksList) {
+    // https://gist.github.com/guilhermepontes/17ae0cc71fa2b13ea8c20c94c5c35dc4
+    return booksList
+        .map(a => [Math.random(), a])
+        .sort((a, b) => a[0] - b[0])
+        .map(a => a[1]);
 }
