@@ -4,6 +4,8 @@ export function startRender(data) {
     const renderObject = readyCarouselData(data)
     renderTemplate(renderObject)
     automatedCarousel(data)
+
+    console.log(data)
 }
 
 function readyCarouselData(data) {
@@ -23,7 +25,7 @@ function automatedCarousel(data) {
     setInterval(() => {
         const renderObject = readyCarouselData(data)
         renderTemplate(renderObject)
-    }, 10000)
+    }, 25000)
 }
 
 function takeRandomResultsFromList(data) {

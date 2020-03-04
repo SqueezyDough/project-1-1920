@@ -13,15 +13,32 @@
         <h1 class="header__title">Boekhappen</h1>
       </header>
 
+      <!-- <section class="explainer">
+        <h2>Waar gaat jouw werkstuk over?</h2>
+        <p>Verzamel boeken over jouw favoriete onderwerp(en).</p>
+        <button class="explainer__start">Beginnen</button>
+      </section> -->
+
+      <p class="helper">Klik op een boek om je keuze op te slaan.</p>
       <section class="books-overview"></section>
+
+      <button>Klaar</button>
     </main>
 
     <script type="text/template" id="booksTemplate">
       {{#Books}}
-        <article class="books-overview__card">
-          <img class="books-overview__card__image" src="{{coverimages.1}}" alt="{{frabl.key1}}" onerror="this.src='{{coverimages.0}}'">
-            {{#summaries.0}} <p> {{summaries.0}} </p> {{/summaries.0}}
-            {{^summaries.0}} <p> Geen samenvatting </p> {{/summaries.0}}
+        <article class="card">
+          <a>
+            <div class="card__front">
+              <img class="card__image" src="{{coverimages.1}}" alt="{{frabl.key1}}" onerror="this.src='{{coverimages.0}}'">
+            </div>
+
+            <div class="card__back">
+              <h2>{{frabl.key1}}</h2>
+              {{#summaries.0}} <p> {{summaries.0}} </p> {{/summaries.0}}
+              {{^summaries.0}} <p> Geen samenvatting </p> {{/summaries.0}}
+            </div>
+          </a>
         </article>
       {{/Books}}
     </script>

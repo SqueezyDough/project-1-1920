@@ -10,7 +10,22 @@ function handleRoutes() {
                 const data = JSON.parse(store.getLocalStorageItems())
                 startRender(data)
             } else {
-                const queries = ['Voetbal', 'Tennis', 'Korfbal', 'Aarde', 'Planeet', 'Dieren', 'Dinosaurus', 'Anne Frank']
+                const queries = [
+                    'Voetbal',
+                    'Politie',
+                    'Brandweer',
+                    'Planeet',
+                    'Millieu',
+                    'Dieren',
+                    'Dinosaurus',
+                    'Koningklijk huis',
+                    'Pesten',
+                    'Smartphone',
+                    'Social media',
+                    'Muziek',
+                    'Arme landen',
+                    'Derde wereld'
+                ]
 
                 const books = queries.map(query => FetchData(query))
                 Promise.all(books)
