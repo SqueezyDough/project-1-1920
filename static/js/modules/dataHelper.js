@@ -10,6 +10,14 @@ export function createRenderableObject(data) {
     return { Books: data }
 }
 
+export function createResultsObject(data) {
+    const obj = Object.entries(data).map(book => {
+        return { Topic: book }
+    })
+
+    return { Results: obj }
+}
+
 function getBooksPerCategory(data) {
     return data.map(category => category.results)
 }

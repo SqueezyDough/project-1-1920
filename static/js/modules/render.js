@@ -1,13 +1,19 @@
-import { createRenderableObject } from './dataHelper.js'
-import * as template from '../templates/overview.js'
+import { createRenderableObject, createResultsObject } from './dataHelper.js'
+import * as overviewTemplate from '../templates/overview.js'
+import * as resultsTemplate from '../templates/results.js'
 
 export function startRender(data) {
     const renderObject = readyCarouselData(data)
-    renderTemplate(renderObject)
-    template.handleEvents();
+    renderTemplate(renderObject, overviewTemplate, '.books-overview')
+    overviewTemplate.handleEvents();
     automatedCarousel(data)
 
     console.log(data)
+}
+
+export function renderResults(data) {
+    const renderObject = createResultsObject(data)
+    renderTemplate(renderObject, resultsTemplate, '.results')
 }
 
 function readyCarouselData(data) {
@@ -15,17 +21,17 @@ function readyCarouselData(data) {
     return createRenderableObject(CarouselData)
 }
 
-function renderTemplate(data) {
-    document.querySelector('.books-overview').innerHTML = ''
-    const insertContainer = document.querySelector('.books-overview');
-    insertContainer.insertAdjacentHTML('beforeend', Mustache.to_html(template.overview, data));
+function renderTemplate(data, template, location) {
+    document.querySelector(location).innerHTML = ''
+    const insertContainer = document.querySelector(location);
+    insertContainer.insertAdjacentHTML('beforeend', Mustache.to_html(template.layout, data));
 }
 
 function automatedCarousel(data) {
     setInterval(() => {
         const renderObject = readyCarouselData(data)
-        renderTemplate(renderObject)
-        template.handleEvents();
+        renderTemplate(renderObject, overviewTemplate, '.books-overview')
+        overviewTemplate.handleEvents();
     }, 25000)
 }
 

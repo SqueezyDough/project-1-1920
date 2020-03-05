@@ -1,6 +1,7 @@
-import { storeChoice } from '../modules/store.js'
+import * as store from '../modules/store.js'
+import * as results from './results.js'
 
-export const overview = `
+export const layout = `
     {{#Books}}
     <article class="card" data-id="{{id}}">
         <a>
@@ -30,8 +31,6 @@ export const overview = `
                     <div class="eat-chunk"></div>
                 </div>
             </div>
-
-
         </a>
     </article>
     {{/Books}}
@@ -39,7 +38,7 @@ export const overview = `
 
 export function handleEvents() {
     handleBookCollector()
-    //handleDone()
+    handleDone()
 }
 
 function handleBookCollector() {
@@ -54,7 +53,31 @@ function handleBookCollector() {
 function addBookCollectorListener(book) {
     book.addEventListener('click', () => {
         const id = book.getAttribute('data-id')
-        storeChoice(id)
+        store.storeChoice(id)
         book.classList.add('trigger-nomnom')
     })
+}
+
+function handleDone() {
+    const doneButton = document.getElementById('done')
+
+    doneButton.addEventListener('click', () => {
+        getChoices();
+        toggleView();
+    })
+}
+
+function getChoices() {
+    const choices = store.getLocalStorageChoices()
+    results.getResults(choices)
+}
+
+function toggleView() {
+    const wrapper = document.querySelector('body')
+    const carouselView = document.querySelector('main')
+    const resultsView = document.querySelector('.results-overview')
+
+    wrapper.classList.toggle('lock-viewport')
+    carouselView.classList.toggle('hide-content')
+    resultsView.classList.toggle('hide-content')
 }

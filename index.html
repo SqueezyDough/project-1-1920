@@ -6,18 +6,27 @@
     <link rel="stylesheet" href="static/css/style.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/0.8.1/mustache.min.js"></script>
   </head>
-  <body>
-    <main>
-      <header class="header">
-        <img class="header__logo" src="./static/images/oba-jnr.png" alt="oba junior">
-        <h1 class="header__title">Boekhappen</h1>
-      </header>
+  <body class='lock-viewport'>
+    <header class="header">
+      <img class="header__logo" src="./static/images/oba-jnr.png" alt="oba junior">
+      <h1 class="header__title">Boekhappen</h1>
+    </header>
 
+    <main>
       <p class="helper">Klik op een boek om je keuze op te slaan.</p>
       <section class="books-overview"></section>
 
-      <button>Klaar</button>
+      <a id="done">Klaar</a>
     </main>
+
+    <section class="results-overview hide-content">
+      <h2>Resultaten</h2>
+      <div class="results">test</div>
+
+      <a id="return">Terug</a>
+      <a id="remove">Verwijder resultaten</a>
+    </section>
+
 
     <script src="./static/js/vendor/routie.min.js"></script>
     <script type="module" src="static/js/app.js"></script>
