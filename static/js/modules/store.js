@@ -18,3 +18,24 @@ export function getLocalStorageItems() {
 function setLocalStorage(data) {
     return localStorage.setItem('books', JSON.stringify(data))
 }
+
+export function storeChoice(id) {
+    getLocalStorageChoices() ? updateChoices(id) : setLocalStorageChoices(id)
+}
+
+export function getLocalStorageChoices() {
+    return localStorage.getItem('choices')
+}
+
+function setLocalStorageChoices(id) {
+    return localStorage.setItem('choices', id)
+}
+
+function updateChoices(id) {
+    if (!getLocalStorageChoices().includes(id)) {
+        const currentChoices = [].concat(getLocalStorageChoices())
+        currentChoices.push(id)
+
+        setLocalStorageChoices(currentChoices)
+    }
+}

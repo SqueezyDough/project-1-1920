@@ -100,33 +100,10 @@ main > button:hover {
   text-align: center;
 }
 
-.explainer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.explainer__start {
-  position: relative;
-  padding: 0.5rem 2rem;
-  background-color: var(--white);
-  border: none;
-  border-top: 4px solid var(--purple);
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: all .2s;
-}
-
-.explainer__start:hover {
-  background-color: var(--purple);
-  color: var(--white)
-}
-
 .books-overview {
   display: flex;
   justify-content: center;
-  perspective: 1200px;
+  perspective: 1600px;
   margin-top: -3rem;
 }
 
@@ -142,6 +119,113 @@ main > button:hover {
   animation: dropCard forwards,
              liftCard forwards;
   animation-timing-function: cubic-bezier(.75,-0.5,0,1.25); /* https://codepen.io/adonisk/pen/WbxmGv */
+}
+
+.trigger-nomnom {
+  z-index: -999;
+}
+
+.trigger-nomnom > a {
+  top: 18rem;
+  box-shadow: unset;
+  animation: none;
+  animation: liftCardForce 2s ease-in forwards;
+}
+
+.trigger-nomnom > a * {
+  opacity: 1;
+  animation: hide .2s forwards;
+  animation-delay: 4s;
+}
+
+.trigger-nomnom .eat-chunk {
+  animation: show .2s forwards;
+}
+
+.trigger-nomnom .card__front, .trigger-nomnom .card__back {
+  border: none;
+  animation: shrink 1s forwards;
+  animation-delay: .5s;
+}
+
+.chunks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.eat-chunk {
+  position: absolute;
+  background-color: var(--light-powder-blue);
+  border-radius: 50%;
+  visibility: hidden;
+}
+
+.eat-chunk:nth-of-type(1) {
+  bottom: -3rem;
+  left: 6rem;
+  width: 16rem;
+  height: 10rem;
+  animation-delay: .0s;
+}
+
+.eat-chunk:nth-of-type(2) {
+  bottom: -5rem;
+  left: -2rem;
+  width: 12rem;
+  height: 16rem;
+  animation-delay: .15s;
+}
+
+.eat-chunk:nth-of-type(3) {
+  bottom: 3rem;
+  left: 6rem;
+  width: 16rem;
+  height: 10rem;
+  animation-delay: .3s;
+}
+
+.eat-chunk:nth-of-type(4) {
+  bottom: 4.5rem;
+  left: 6rem;
+  width: 14rem;
+  height: 16rem;
+  animation-delay: .45s;
+}
+
+.eat-chunk:nth-of-type(5) {
+  top: -3rem;
+  left: -3rem;
+  width: 16rem;
+  height: 16rem;
+  animation-delay: .6s;
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes show {
+  from { visibility: hidden; }
+  to { visibility: visible; }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
 
 .card:nth-last-of-type(1) > a {
@@ -181,6 +265,7 @@ main > button:hover {
 
 .card:hover > a {
   transform: rotateY(.5turn) rotate(5deg);
+  z-index: 99;
 }
 
 .card:not(:last-child) > a {
@@ -214,7 +299,11 @@ main > button:hover {
 }
 
 .card__front{
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: var(--medium-powder-blue);
+  text-align: center;
 }
 
 .card__back {
@@ -228,6 +317,12 @@ main > button:hover {
   display: block;
   width: 15rem;
   height: 20rem;
+}
+
+.card__image__none {
+  font-family: 'Poppins-bold', sans-serif;
+  font-size: 1.5rem;
+  color: var(--dark-powder-blue);
 }
 
 @keyframes dropCard {
@@ -252,4 +347,9 @@ main > button:hover {
   100% {
     top: -25rem;
   }
+}
+
+@keyframes liftCardForce {
+  0% { top: 18rem; }
+  100% { top: -25rem; }
 }

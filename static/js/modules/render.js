@@ -1,8 +1,10 @@
 import { createRenderableObject } from './dataHelper.js'
+import * as template from '../templates/overview.js'
 
 export function startRender(data) {
     const renderObject = readyCarouselData(data)
     renderTemplate(renderObject)
+    template.handleEvents();
     automatedCarousel(data)
 
     console.log(data)
@@ -15,16 +17,15 @@ function readyCarouselData(data) {
 
 function renderTemplate(data) {
     document.querySelector('.books-overview').innerHTML = ''
-    const template = document.querySelector('#booksTemplate').innerHTML;
     const insertContainer = document.querySelector('.books-overview');
-    insertContainer.insertAdjacentHTML('beforeend', Mustache.to_html(template, data));
+    insertContainer.insertAdjacentHTML('beforeend', Mustache.to_html(template.overview, data));
 }
-
 
 function automatedCarousel(data) {
     setInterval(() => {
         const renderObject = readyCarouselData(data)
         renderTemplate(renderObject)
+        template.handleEvents();
     }, 25000)
 }
 

@@ -18,7 +18,6 @@ function handleRoutes() {
                     'Millieu',
                     'Dieren',
                     'Dinosaurus',
-                    'Koningklijk huis',
                     'Pesten',
                     'Smartphone',
                     'Social media',
