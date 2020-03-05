@@ -41,13 +41,20 @@ export function handleEvents() {
     handleDone()
 }
 
+export function toggleView() {
+    const carouselView = document.querySelector('main')
+    const resultsView = document.querySelector('.results-overview')
+
+    carouselView.classList.toggle('hide-content')
+    resultsView.classList.toggle('hide-content')
+}
+
 function handleBookCollector() {
     const books = document.querySelectorAll('.card')
 
     books.forEach(book => {
         addBookCollectorListener(book)
     })
-
 }
 
 function addBookCollectorListener(book) {
@@ -70,14 +77,4 @@ function handleDone() {
 function getChoices() {
     const choices = store.getLocalStorageChoices()
     results.getResults(choices)
-}
-
-function toggleView() {
-    const wrapper = document.querySelector('body')
-    const carouselView = document.querySelector('main')
-    const resultsView = document.querySelector('.results-overview')
-
-    wrapper.classList.toggle('lock-viewport')
-    carouselView.classList.toggle('hide-content')
-    resultsView.classList.toggle('hide-content')
 }

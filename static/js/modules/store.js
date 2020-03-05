@@ -15,6 +15,10 @@ export function getLocalStorageItems() {
     return localStorage.getItem('books')
 }
 
+export function clearStorageItem(key) {
+    localStorage.removeItem(key);
+}
+
 function setLocalStorage(data) {
     return localStorage.setItem('books', JSON.stringify(data))
 }

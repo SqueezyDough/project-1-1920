@@ -1,4 +1,5 @@
 import { createRenderableObject, createResultsObject } from './dataHelper.js'
+import * as helper from './dataHelper.js'
 import * as overviewTemplate from '../templates/overview.js'
 import * as resultsTemplate from '../templates/results.js'
 
@@ -7,13 +8,14 @@ export function startRender(data) {
     renderTemplate(renderObject, overviewTemplate, '.books-overview')
     overviewTemplate.handleEvents();
     automatedCarousel(data)
-
-    console.log(data)
 }
 
 export function renderResults(data) {
     const renderObject = createResultsObject(data)
-    renderTemplate(renderObject, resultsTemplate, '.results')
+    const dataByPreference = helper.calculatePreferences(renderObject)
+    const sortedPreferences = helper.sortBooks(dataByPreference);
+
+    renderTemplate(sortedPreferences, resultsTemplate, '.results')
 }
 
 function readyCarouselData(data) {

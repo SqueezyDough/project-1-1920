@@ -37,10 +37,6 @@ body {
   border-top: 10px solid var(--purple);
 }
 
-.lock-viewport {
-  overflow: hidden;
-}
-
 main {
   position: relative;
   height: 100vh;
@@ -50,32 +46,44 @@ main {
   display: none;
 }
 
-main > a {
-  display: block;
-  position: absolute;
-  left: 50%;
-  bottom: -1.5rem;
-  transform: translate(-50%, -50%);
+main > a, .remove, .return{
   padding: .5rem 2rem;
   width: 20rem;
   background-color: var(--medium-powder-blue);
   border: none;
   border-top: 4px solid var(--purple);
+  border-radius: 3px 3px 0 0;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: var(--dark-powder-blue);
   cursor: pointer;
   transition: all .2s;
 }
 
-main > a:hover {
+main > a {
+  display: block;
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  transform: translate(-50%, -50%);
+  font-size: 1.5rem;
+}
+
+main > a:hover, .remove:hover, .return:hover {
   background-color: var(--purple);
   color: var(--white);
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 3rem;
 }
 
 .header {
   position: relative;
   margin: 0 auto;
+  min-height: 5rem;
   padding: 1rem;
   text-align: center;
 }
@@ -121,17 +129,20 @@ main > a:hover {
 
 .card > a {
   position: absolute;
-  display: block;
   top: -25rem;
-  transform-style: preserve-3d;
-  width: 15rem;
-  height: 20rem;
   box-shadow: 10px 20px 20px #00000025;
   cursor: pointer;
-  transition: transform 1s;
   animation: dropCard forwards,
              liftCard forwards;
   animation-timing-function: cubic-bezier(.75,-0.5,0,1.25); /* https://codepen.io/adonisk/pen/WbxmGv */
+}
+
+.card > a, .card--results > a {
+  display: block;
+  transform-style: preserve-3d;
+  width: 15rem;
+  height: 20rem;
+  transition: transform 1s;
 }
 
 .trigger-nomnom {
@@ -218,29 +229,6 @@ main > a:hover {
   animation-delay: .6s;
 }
 
-@keyframes shrink {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(0);
-  }
-}
-
-@keyframes show {
-  from { visibility: hidden; }
-  to { visibility: visible; }
-}
-
-@keyframes hide {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
-}
-
 .card:nth-last-of-type(1) > a {
   left: 5rem;
   transform: rotate(8deg);
@@ -281,7 +269,16 @@ main > a:hover {
   z-index: 99;
 }
 
+.card--results a:hover {
+  transform: rotateY(.5turn)
+}
+
 .card:not(:last-child) > a {
+  margin-right: 1rem;
+}
+
+.card--results:not(:last-child) > a {
+  margin-bottom: 1rem;
   margin-right: 1rem;
 }
 
@@ -327,15 +324,110 @@ main > a:hover {
 }
 
 .card__image {
-  display: block;
   width: 15rem;
   height: 20rem;
+  border-radius: 3px;
 }
 
 .card__image__none {
   font-family: 'Poppins-bold', sans-serif;
   font-size: 1.5rem;
   color: var(--dark-powder-blue);
+}
+
+.results-overview {
+  margin: 5rem auto;
+  max-width: 56rem;
+  text-align: center;
+}
+
+.results-overview header {
+  line-height: 1.4rem;
+}
+
+.results-overview__title {
+  font-family: 'Poppins-bold', sans-serif;
+  font-size: 2rem;
+  color: var(--dark-powder-blue)
+}
+
+.results-overview__subtitle {
+  margin: 0 auto 4rem;
+  max-width: 40rem;
+  color: var(--dark-powder-blue)
+}
+
+.results-overview article {
+  margin-top: 3rem;
+  position: relative;
+  width: 100%;
+  background-color: var(--medium-powder-blue);
+}
+
+.results-overview article:first-of-type {
+  padding-top: 2.5rem;
+  background-color: var(--medium-powder-blue);
+  border-top: 4px solid var(--purple)
+}
+
+.results-overview article:first-of-type::after {
+  content: 'Onderwerpen die je misschien ook leuk vind';
+  position: absolute;
+  bottom: -7rem;
+  margin: 2rem 0;
+  width: 100%;
+  text-align: center;
+  font-size: 1.5rem;
+  font-family: 'Poppins-Bold', sans-serif;
+  color: var(--dark-powder-blue)
+}
+
+.results-overview article:nth-of-type(2) {
+  margin-top: 8.5rem;
+}
+
+.preference {
+  position: absolute;
+  width: 3rem;
+  height: 3rem;
+  top: -.15rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: yellow;
+  border-radius: 50%;
+  line-height: 3rem;
+  font-size: 1rem;
+  font-family: 'Poppins-Bold', sans-serif;
+}
+
+.results-overview article:nth-of-type(1) .preference {
+  width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  font-size: 1.5rem;
+}
+
+.card--results {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+  padding: 2.5rem;
+  border-radius: 3px;
+}
+
+.card--results div {
+  text-align: left;
+}
+
+.card--results__title {
+  flex-basis: 100%;
+}
+
+.return, .remove {
+  display: inline-block;
+  border-top: 4px solid var(--purple);
+
 }
 
 @keyframes dropCard {
@@ -365,4 +457,27 @@ main > a:hover {
 @keyframes liftCardForce {
   0% { top: 18rem; }
   100% { top: -25rem; }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes show {
+  from { visibility: hidden; }
+  to { visibility: visible; }
+}
+
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }
