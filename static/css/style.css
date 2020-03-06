@@ -424,6 +424,10 @@ main > a:hover, .remove:hover, .return:hover {
   flex-basis: 100%;
 }
 
+.card--results__title::first-letter {
+  text-transform: uppercase;
+}
+
 .return, .remove {
   display: inline-block;
   border-top: 4px solid var(--purple);

@@ -62,7 +62,7 @@ function sortByTopic(data, property) {
         let key = {}
 
         if (obj[property]) {
-            key = obj[property][0]
+            key = obj[property][0].toLowerCase();
         }
 
         if (!acc[key]) {
