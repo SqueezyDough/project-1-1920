@@ -23,7 +23,9 @@ This webapp focusses on the ideation phase for crating a paper. Based on a old d
 
 <a name="Prototype"></a>
 # Prototype
-![](https://github.com/SqueezyDough/frontend-applications/blob/master/wiki/home2.jpg?)
+![](https://github.com/SqueezyDough/frontend-applications/blob/master/github/carousel.png?)
+![](https://github.com/SqueezyDough/frontend-applications/blob/master/github/res1.png?)
+![](https://github.com/SqueezyDough/frontend-applications/blob/master/github/res2.png?)
 
 <a name="Features"></a>
 # Features
