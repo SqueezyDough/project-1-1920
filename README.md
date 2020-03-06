@@ -6,6 +6,8 @@
 * [Features](#Features)
 * [Prototype](#Prototype)
 * [API](#API)
+* * [Data](#Data)
+* * [Data Transfornation](#Data-Transfornation)
 * [Install](#Install)
 * * [Clone repository](#Clone-repo)
 * * [Usage](#Usage)
@@ -37,7 +39,7 @@ This webapp focusses on the ideation phase for crating a paper. Based on a old d
 - [ ] Combine related categories
 - [ ] Make the site compatible with other browser (chrome-only)
 
-<a name="Data"></a>
+<a name="API"></a>
 # API
 
 <a name="Data"></a>
@@ -62,8 +64,8 @@ I've selected a few categories that might be interesting for the target audience
 ## Data Transformation
 I've sorted the data by topic.
 
-<a name="Installation"></a>
-# Installation
+<a name="Install"></a>
+# Install
 <a name="Clone-repo"></a>
 ## Clone repository
 `clone repo`
