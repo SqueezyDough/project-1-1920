@@ -7,7 +7,7 @@
 * [Prototype](#Prototype)
 * [API](#API)
 * * [Data](#Data)
-* * [Data Transfornation](#Data-Transfornation)
+* * [Data Transfornation](#Data-Transformation)
 * [Install](#Install)
 * * [Clone repository](#Clone-repo)
 * * [Usage](#Usage)
