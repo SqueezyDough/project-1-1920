@@ -11,6 +11,7 @@
 * [Install](#Install)
 * * [Clone repository](#Clone-repo)
 * * [Usage](#Usage)
+* [Sources](#Sources)
 * [License](#License)
 
 <a name="Assignment"></a>
@@ -78,6 +79,11 @@ I've sorted the data by topic.
 <a name="Usage"></a>
 ## Usage 
 `Run index.html with live server`
+
+<a name="Sources"></a>
+# Sources
+* Suffle list: https://gist.github.com/guilhermepontes/17ae0cc71fa2b13ea8c20c94c5c35dc4
+* Check fetch status: https://codeburst.io/fetch-api-was-bringing-darkness-to-my-codebase-so-i-did-something-to-illuminate-it-7f2d8826e939
 
 <a name="License"></a>
 # License 
