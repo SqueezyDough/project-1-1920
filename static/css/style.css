@@ -367,7 +367,7 @@ main > a:hover, .remove:hover, .return:hover {
 .results-overview article:first-of-type {
   padding-top: 2.5rem;
   background-color: var(--medium-powder-blue);
-  border-top: 4px solid var(--purple)
+  border-top: 4px solid var(--purple);
 }
 
 .results-overview article:first-of-type::after {

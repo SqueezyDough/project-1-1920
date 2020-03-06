@@ -43,12 +43,12 @@ export function handleResultEvents() {
     const clearStorage = document.querySelector('.remove')
 
     returnToCarousel.addEventListener('click', () => {
-        overview.toggleView()
+        overview.showCarousel()
     })
 
     clearStorage.addEventListener('click', () => {
         store.clearStorageItem('choices')
-        overview.toggleView()
+        overview.showCarousel()
     })
 }
 

@@ -41,12 +41,20 @@ export function handleEvents() {
     handleDone()
 }
 
-export function toggleView() {
+export function showResults() {
     const carouselView = document.querySelector('main')
     const resultsView = document.querySelector('.results-overview')
 
-    carouselView.classList.toggle('hide-content')
-    resultsView.classList.toggle('hide-content')
+    carouselView.classList.add('hide-content')
+    resultsView.classList.remove('hide-content')
+}
+
+export function showCarousel() {
+    const carouselView = document.querySelector('main')
+    const resultsView = document.querySelector('.results-overview')
+
+    carouselView.classList.remove('hide-content')
+    resultsView.classList.add('hide-content')
 }
 
 function handleBookCollector() {
@@ -70,7 +78,7 @@ function handleDone() {
 
     doneButton.addEventListener('click', () => {
         getChoices();
-        toggleView();
+        showResults();
     })
 }
 
