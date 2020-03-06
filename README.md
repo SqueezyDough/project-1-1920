@@ -1,18 +1,26 @@
-## Table of contents
+# OBA Boekhappen (OBA Book Bites)
+
+# Table of contents
+* [Assignment](#Assignment)
+* [Description](#Description)
 * [Features](#Features)
-* [Data](#Data)
-* [Refactors](#Refactors
+* [Prototype](#Prototype)
+* [API](#API)
 * [Install](#Install)
 * * [Clone repository](#Clone-repo)
+* * [Usage](#Usage)
 * [License](#License)
 
+<a name="Assignment"></a>
 # Assignment
 I've been assigned to create a single page webapp that helps children from 9-12 years old with their paper. This prototype uses the OBA API to fetch and display books and media from the OBA.
 
+<a name="Description"></a>
 # Description
 This webapp focusses on the ideation phase for crating a paper. Based on a old dutch tradition known as koekhappen (cake bites), children can eat books of their liking. When they're done, they can go to a results page. This page shows which topics are likely to be preferred by the user based on what they have eaten. The best match is displayed on top of the page and the worst match is displayed at the bottom.
 
-# Images
+<a name="Prototype"></a>
+# Prototype
 ![](https://github.com/SqueezyDough/frontend-applications/blob/master/wiki/home2.jpg?)
 
 <a name="Features"></a>
@@ -27,6 +35,10 @@ This webapp focusses on the ideation phase for crating a paper. Based on a old d
 - [ ] Show picked books on carousel page
 - [ ] Remove duplicates in carousel
 - [ ] Combine related categories
+- [ ] Make the site compatible with other browser (chrome-only)
+
+<a name="Data"></a>
+# API
 
 <a name="Data"></a>
 ## Data
@@ -46,16 +58,20 @@ I've selected a few categories that might be interesting for the target audience
 * Arme landen (Poor countries)
 * Derde wereld (Third world countries)
 
-<a name="Installation"></a>
-## Installation
-  <a name="Clone-repo"></a>
-  ### Clone repository
-  `clone repo`
+<a name="Data-Transformation"></a>
+## Data Transformation
+I've sorted the data by topic.
 
-  <a name="Usage"></a>
-  ### Usage 
-  `Run index.html with live server`
+<a name="Installation"></a>
+# Installation
+<a name="Clone-repo"></a>
+## Clone repository
+`clone repo`
+
+<a name="Usage"></a>
+## Usage 
+`Run index.html with live server`
 
 <a name="License"></a>
-## License 
+# License 
 [MIT](https://github.com/SqueezyDough/frontend-applications/blob/master/LICENSE) @ SqueezyDough
