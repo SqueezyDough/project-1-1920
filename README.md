@@ -68,7 +68,7 @@ I've sorted the data by topic.
 # Install
 <a name="Clone-repo"></a>
 ## Clone repository
-`clone repo`
+`git clone https://github.com/SqueezyDough/project-1-1920.git`
 
 <a name="Usage"></a>
 ## Usage 
