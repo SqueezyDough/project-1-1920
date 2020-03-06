@@ -41,6 +41,7 @@ This webapp focusses on the ideation phase for crating a paper. Based on a old d
 - [ ] Show picked books on carousel page
 - [ ] Remove duplicates in carousel
 - [ ] Combine related categories
+- [ ] Rerender items after storage clear
 - [ ] Make the site compatible with other browser (chrome-only)
 
 <a name="API"></a>
