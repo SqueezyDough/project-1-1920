@@ -11,6 +11,7 @@
 * [Install](#Install)
 * * [Clone repository](#Clone-repo)
 * * [Usage](#Usage)
+* [Sources](#Sources)
 * [License](#License)
 
 <a name="Assignment"></a>
@@ -23,7 +24,11 @@ This webapp focusses on the ideation phase for crating a paper. Based on a old d
 
 <a name="Prototype"></a>
 # Prototype
-![](https://github.com/SqueezyDough/frontend-applications/blob/master/wiki/home2.jpg?)
+## Book bites
+![](https://github.com/SqueezyDough/project-1-1920/blob/master/github/carousel.png?)
+## Recommendations
+![](https://github.com/SqueezyDough/project-1-1920/blob/master/github/res1.png?)
+![](https://github.com/SqueezyDough/project-1-1920/blob/master/github/res2.png?)
 
 <a name="Features"></a>
 # Features
@@ -37,6 +42,7 @@ This webapp focusses on the ideation phase for crating a paper. Based on a old d
 - [ ] Show picked books on carousel page
 - [ ] Remove duplicates in carousel
 - [ ] Combine related categories
+- [ ] Rerender items after storage clear
 - [ ] Make the site compatible with other browser (chrome-only)
 
 <a name="API"></a>
@@ -73,6 +79,11 @@ I've sorted the data by topic.
 <a name="Usage"></a>
 ## Usage
 `Run index.html with live server`
+
+<a name="Sources"></a>
+# Sources
+* Suffle list: https://gist.github.com/guilhermepontes/17ae0cc71fa2b13ea8c20c94c5c35dc4
+* Check fetch status: https://codeburst.io/fetch-api-was-bringing-darkness-to-my-codebase-so-i-did-something-to-illuminate-it-7f2d8826e939
 
 <a name="License"></a>
 # License
