@@ -104,7 +104,7 @@ I've sorted the data by topic.
 
 ### Notes
 * No JS breaks everything
-* Can't tab through website
+* Can't tab through carousel
 * Local storage isn't needed for creating the cards but is needed for saving the choices
 * Site does work when throttled but takes a long time to load without giving feedback to the user
 
@@ -135,3 +135,8 @@ Broke everything
 * Scaling issue
 * No event to flip card
 * Card position issue
+
+## Screen reader
+* Je kunt de boeken niet van elkaar onderscheiden. Boeken moeten worden genummerd.
+* Als de beschrijven van de boeken lang zijn zal de screenreader niet de Klaar knop voorlezen.
+* Screenreader zal ook boeken voorlezen die je al hebt opgegeten.
