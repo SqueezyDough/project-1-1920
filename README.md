@@ -71,9 +71,56 @@ I've sorted the data by topic.
 `git clone https://github.com/SqueezyDough/project-1-1920.git`
 
 <a name="Usage"></a>
-## Usage 
+## Usage
 `Run index.html with live server`
 
 <a name="License"></a>
-# License 
+# License
 [MIT](https://github.com/SqueezyDough/frontend-applications/blob/master/LICENSE) @ SqueezyDough
+
+# Breek je OBA
+## Tested features
+[X] Passed
+[ ] Failed
+
+[X] Disable images
+[ ] Disable mouse/trackpad
+[X] Disable custom fonts
+[ ] Disable JS
+[X] Disable colors / enable color blind mode
+[ ] Disable local storage / cookies
+[ ] Enable internet throttling
+
+### Notes
+* No JS breaks everything
+* Can't tab through website
+* Local storage isn't needed for creating the cards but is needed for saving the choices
+* Site does work when throttled but takes a long time to load without giving feedback to the user
+
+## Devices
+### Macbook Pro (2017, macOS Catalina 10.15)
+#### Chrome version Chrome 80
+Works as intended
+
+#### Firefox version
+Works as intended
+
+#### Safari version 13.1
+* Backface-visibility bug. Card text is visible on front
+* Minor positioning issues
+
+### Microsoft surface (Windows RT 8.1)
+#### Internet explorer version 11.0
+Broke everything
+
+* No browser support for css variables
+* No browser support for rotate transforms
+* No browser support for fetch
+* No browser support for imports
+
+### iPhone 8 (iOS 13.4)
+#### Safari iOS version 13.1, Firefox version 23.0 iOS, Chrome version 80 iOS
+* Horizontal scrollbar
+* Scaling issue
+* No event to flip card
+* Card position issue
