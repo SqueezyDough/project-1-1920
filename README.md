@@ -84,10 +84,6 @@ I've sorted the data by topic.
 [MIT](https://github.com/SqueezyDough/frontend-applications/blob/master/LICENSE) @ SqueezyDough
 
 # Breek je OBA
-## Tested features
-- [X] Passed
-- [ ] Failed
-
 - [X] Disable images
 - [ ] Disable mouse/trackpad
 - [X] Disable custom fonts
