@@ -11,6 +11,7 @@
 * [Install](#Install)
 * * [Clone repository](#Clone-repo)
 * * [Usage](#Usage)
+* [Browser technologies](#BT)
 * [License](#License)
 
 <a name="Assignment"></a>
@@ -79,11 +80,8 @@ I've sorted the data by topic.
 ## Usage
 `Run index.html with live server`
 
-<a name="License"></a>
-# License
-[MIT](https://github.com/SqueezyDough/frontend-applications/blob/master/LICENSE) @ SqueezyDough
-
-# Breek je OBA
+<a name="BT"></a>
+# Browser technologies
 - [X] Disable images
 - [ ] Disable mouse/trackpad
 - [X] Disable custom fonts
@@ -130,3 +128,7 @@ Broke everything
 * Je kunt de boeken niet van elkaar onderscheiden. Boeken moeten worden genummerd.
 * Als de beschrijven van de boeken lang zijn zal de screenreader niet de Klaar knop voorlezen.
 * Screenreader zal ook boeken voorlezen die je al hebt opgegeten.
+
+<a name="License"></a>
+# License
+[MIT](https://github.com/SqueezyDough/frontend-applications/blob/master/LICENSE) @ SqueezyDough
