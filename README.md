@@ -81,7 +81,8 @@ I've sorted the data by topic.
 `Run index.html with live server`
 
 <a name="BT"></a>
-# Browser technologies
+# Browser technologies: Breek je OBA
+## Features
 - [X] Disable images
 - [ ] Disable mouse/trackpad
 - [X] Disable custom fonts
